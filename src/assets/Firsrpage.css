@@ -1,14 +1,166 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 .firstpage-container {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: pink;
+  align-items: center;
+  background: linear-gradient(135deg, #ffe4e6, #fbcfe8, #f472b6);
+  background-size: 300% 300%;
+  animation: bgGradientShift 10s ease infinite;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes bgGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Background Falling Animation */
+.falling-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.falling-element {
+  position: absolute;
+  top: -10%;
+  font-size: 1.8rem;
+  opacity: 0.6;
+  animation: fallDownAnimation linear infinite;
+}
+
+@keyframes fallDownAnimation {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+.firstpage-content {
   text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.img-wrapper {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.friend-photo {
+  width: 130% !important;
+  height: 130% !important;
+  margin-top: -15px;
+}
+
+.friend-name-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem;
+  color: #831843;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 4 Balloons 2x2 Grid Style */
+.balloons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 160px); /* Grid space badhaya gaya hai */
+  gap: 30px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.balloon-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px; /* Container height badhayi hai */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  animation: floatBalloon 3s ease-in-out infinite alternate;
+  user-select: none;
+}
+
+.balloon-item:hover {
+  transform: scale(1.1);
+}
+
+/* Balloon Size Increased */
+.balloon-emoji {
+  font-size: 8.5rem; /* Balloon ki size badi ki hai */
+  position: absolute;
+  z-index: 2;
+}
+
+.balloon-text {
+  position: absolute;
+  z-index: 1;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem; /* Text ki size bhi readability ke liye adjust ki hai */
+  font-weight: 700;
+  color: #831843;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.b1 { animation-delay: 0s; }
+.b2 { animation-delay: 0.5s; }
+.b3 { animation-delay: 1s; }
+.b4 { animation-delay: 1.5s; }
+
+@keyframes floatBalloon {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+/* Balloon click message box */
+.balloon-secret-msg {
+  margin-top: 25px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Icon Button - Only Size Added */
+.sandesh-icon-btn {
+  width: 50vh;
+  height: 50vh;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Icon Button - Size Badha Di Gayi Hai */
+.sandesh-icon-btn {
+  width: 80px;      /* Width badha di hai */
+  height: 80px;     /* Height badha di hai */
+  font-size: 3rem;  /* Andar ke icon/emoji ki size badha di hai */
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
