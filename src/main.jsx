@@ -108,10 +108,11 @@ function MainApp() {
   )
 }
 
+// Fixed Render Structure: BrowserRouter inside root element so hooks work properly
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <MainApp />
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
