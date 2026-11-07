@@ -43,7 +43,7 @@ const Firstpage = () => {
 
                     {/* Main Friend Image */}
                     <div className="img-wrapper">
-                        <img src="public/3329011-removebg-preview.png" alt="Best Friend" className="friend-photo" />
+                        <img src="public/OJXMDX0-removebg-preview.png" alt="Best Friend" className="friend-photo" />
                     </div>
 
                     {/* 4 Balloons Grid */}
