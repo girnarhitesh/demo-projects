@@ -43,7 +43,7 @@ const Firstpage = () => {
 
                     {/* Main Friend Image */}
                     <div className="img-wrapper">
-                        <img src="public/2.gif" alt="Best Friend" className="friend-photo" />
+                        <img src="/2.gif" alt="Best Friend" className="friend-photo" />
                     </div>
                 
 

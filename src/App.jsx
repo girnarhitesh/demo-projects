@@ -84,7 +84,7 @@ function App() {
 
         {/* Centered Image Wrapper with Floating Animation Class */}
         <div className="img-wrapper animated-teddy">
-          <img src="public/1.gif" alt="Best Friend" className="friend-photo" />
+          <img src="/1.gif" alt="Best Friend" className="friend-photo" />
         </div>
 
         {/* Subtitle Text */}
