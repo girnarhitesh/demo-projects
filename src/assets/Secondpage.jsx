@@ -40,7 +40,7 @@ function Secondpage() {
             <h2 className="note-heading">A Special Note For You 🤍</h2>
             
             <p className="note-text">
-              "Dear Shivani, you becoming my friend is the best thing for me. My day goes so wonderfully just by talking to you, and if you ever got angry with me about anything, please forgive me thinking of me as a true friend. You truly are one of a kind!" 💖✨
+             "Pata nahi kyu, par jab bhi mera mood off hota hai ya main bore hota hoon, bas tumse ek baar baat kar leta hoon aur mera pura din ban jata hai. Thank you meri life me aane ke liye, bestie!" 🌸🤍
             </p>
 
             <div className="note-footer-text">
