@@ -20,7 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #ffe4e6, #fbcfe8, #f472b6);
+  /* background: linear-gradient(135deg, #ffe4e6, #fbcfe8, #f472b6); */
   background-size: 300% 300%;
   animation: bgGradientShift 10s ease infinite;
   color: #4a044e;
@@ -233,7 +233,7 @@
   }
 }
 
-@keyframes floatAndPulse {
+/* @keyframes floatAndPulse {
   0% {
     transform: translateY(0px) scale(1);
   }
@@ -247,4 +247,4 @@
 
 .animated-teddy {
   animation: floatAndPulse 3s ease-in-out infinite;
-}
+} */
