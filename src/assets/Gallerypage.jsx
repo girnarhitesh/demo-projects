@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/effect-cards';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+
 // import required modules
-import { EffectCards } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 import './Imagepage.css';
 
 function Gallerypage() {
@@ -15,39 +18,55 @@ function Gallerypage() {
 
     // Gallery Images List
     const galleryImages = [
-        { id: 1, src: "public/5.jpeg", title: "Beautiful Moments" },
-        { id: 2, src: "public/4.jpeg", title: "Sweet Memories" },
-        { id: 3, src: "public/2.jpeg", title: "Best Times" },
-        { id: 4, src: "public/1.jpeg", title: "Forever Friends" },
-        { id: 5, src: "public/3.jpeg", title: "Special Bond" },
+        { id: 1, src: "/5.jpeg", title: "Beautiful Moments 💖" },
+        { id: 2, src: "/4.jpeg", title: "Sweet Memories ✨" },
+        { id: 3, src: "/2.jpeg", title: "Best Times 🌸" },
+        { id: 4, src: "/1.jpeg", title: "Forever Friends 🤍" },
+        { id: 5, src: "/3.jpeg", title: "Special Bond 🧸" },
     ];
 
     return (
         <div className="imagepage-container">
             {/* Background Falling Animation */}
             <div className="falling-bg-container">
-                <div className="falling-element" style={{ left: '20%', animationDuration: '7s', animationDelay: '0s' }}>💖</div>
-                <div className="falling-element" style={{ left: '70%', animationDuration: '6s', animationDelay: '1s' }}>✨</div>
-                <div className="falling-element" style={{ left: '45%', animationDuration: '8s', animationDelay: '2s' }}>🌸</div>
+                <div className="falling-element" style={{ left: '15%', animationDuration: '7s', animationDelay: '0s' }}>💖</div>
+                <div className="falling-element" style={{ left: '50%', animationDuration: '6s', animationDelay: '1s' }}>✨</div>
+                <div className="falling-element" style={{ left: '80%', animationDuration: '8s', animationDelay: '2s' }}>🌸</div>
             </div>
 
             <div className="gallery-content-wrapper">
                 <h2 className="gallery-title">Memorable Moments 📸</h2>
+                <p className="gallery-subtitle">You have no idea how much you mean to me.. 🤍</p>
 
-                {/* Swiper Cards Container */}
+                {/* Swiper Coverflow Container with Smooth Autoplay */}
                 <div className="swiper-cards-wrapper">
                     <Swiper
-                        effect={'cards'}
+                        effect={'coverflow'}
                         grabCursor={true}
-                        loop={true}           
-                        rewind={true}       
-                        modules={[EffectCards]}
+                        centeredSlides={true}
+                        slidesPerView={3}
+                        spaceBetween={0}
+                        loop={true}
+                        coverflowEffect={{
+                            rotate: 35,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 1,
+                            slideShadows: false,
+                        }}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true,
+                        }}
+                        pagination={{ clickable: true }}
+                        modules={[EffectCoverflow, Pagination, Autoplay]}
                         className="mySwiper"
                     >
                         {galleryImages.map((item) => (
                             <SwiperSlide
                                 key={item.id}
-                                onClick={() => setSelectedImage(item)} // 👈 Ab sirf image/card par click karne par hi modal open hoga
+                                onClick={() => setSelectedImage(item)}
                                 className="gallery-swiper-slide"
                             >
                                 <div className="swiper-slide-inner">

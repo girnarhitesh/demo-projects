@@ -232,3 +232,19 @@
     font-size: 0.8rem;
   }
 }
+
+@keyframes floatAndPulse {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.04);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.animated-teddy {
+  animation: floatAndPulse 3s ease-in-out infinite;
+}

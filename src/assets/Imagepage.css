@@ -51,7 +51,7 @@
   z-index: 10;
   text-align: center;
   width: 100%;
-  max-width: 450px;
+  max-width: 800px; /* 👈 3 slides ke liye width expand ki hai */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,56 +59,59 @@
 
 .gallery-title {
   font-family: 'Dancing Script', cursive;
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   color: #831843;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Swiper Container Responsiveness & Bigger Card Size */
+.gallery-subtitle {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  color: #831843;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Swiper Coverflow Styling */
 .swiper-cards-wrapper {
   width: 100%;
-  display: flex;
-  justify-content: center;
   padding: 10px 0;
 }
 
-/* Default Bada Card Size (Desktop / Tablet) */
 .swiper {
-  width: 320px;
-  height: 450px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
-/* Mobile Screens (Standard Phones) */
-@media (max-width: 480px) {
-  .swiper {
-    width: 280px;
-    height: 400px;
-  }
-
-  .gallery-title {
-    font-size: 2.2rem;
-  }
-}
-
-/* Chote Mobile Screens (Small Phones) */
-@media (max-width: 360px) {
-  .swiper {
-    width: 240px;
-    height: 350px;
-  }
-
-  .gallery-title {
-    font-size: 2rem;
-  }
-}
-
+/* Har ek slide ka size taaki exact 3 slides screen par dikhein */
 .gallery-swiper-slide {
-  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+  height: 360px;
   border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 15px 35px rgba(131, 24, 67, 0.3);
+  cursor: pointer;
   background: #fff;
-  box-shadow: 0 10px 25px rgba(131, 24, 67, 0.25);
+  border: 4px solid #fff;
+}
+
+/* Mobile Screens ke liye responsive adjustment */
+@media (max-width: 768px) {
+  .gallery-swiper-slide {
+    width: 200px;
+    height: 310px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-swiper-slide {
+    width: 175px;
+    height: 275px;
+  }
 }
 
 .swiper-slide-inner {
@@ -117,28 +120,27 @@
   height: 100%;
 }
 
-/* Perfect Image Fit (No Stretching/Distortion) */
 .swiper-card-img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* Card Overlay Text */
+/* Overlay and Title */
 .swiper-card-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(131, 24, 67, 0.9), transparent);
+  background: linear-gradient(to top, rgba(131, 24, 67, 0.85), transparent);
   padding: 25px 10px 15px;
   text-align: center;
 }
 
 .swiper-card-title {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #fff;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -146,18 +148,19 @@
 
 /* Back Button */
 .back-btn-wrapper {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .gallery-back-btn {
   background: #831843;
   color: #fff;
   border: none;
-  padding: 10px 25px;
+  padding: 8px 22px;
   border-radius: 20px;
   cursor: pointer;
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.4rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
   box-shadow: 0 5px 15px rgba(131, 24, 67, 0.3);
   transition: transform 0.2s ease;
 }
@@ -188,14 +191,14 @@
   padding: 20px;
   border-radius: 20px;
   text-align: center;
-  max-width: 360px;
+  max-width: 340px;
   width: 100%;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .modal-img {
   width: 100%;
-  height: 300px;
+  height: 430px;
   object-fit: cover;
   border-radius: 15px;
   margin-bottom: 12px;
@@ -203,7 +206,7 @@
 
 .image-modal-content h3 {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   color: #831843;
   margin-bottom: 12px;
 }
@@ -215,7 +218,7 @@
   padding: 8px 20px;
   border-radius: 15px;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }

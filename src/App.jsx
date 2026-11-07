@@ -21,7 +21,7 @@ function App() {
     }
   }
 
-  // Cursor click heart animation effect
+  // Cursor click heart animation effect (Heart icon set as per user preference)
   useEffect(() => {
     const handleMouseClick = (e) => {
       const heart = document.createElement('div');
@@ -43,7 +43,6 @@ function App() {
   }, []);
 
   const handleSurprise = () => {
-    // Agar music play na ho raha ho toh click par start bhi kar sakte hain
     if (audioRef.current && !isPlaying) {
       audioRef.current.play().catch(() => {})
     }
@@ -63,15 +62,6 @@ function App() {
 
   return (
     <div className="hero-section">
-      {/* Background Audio Element */}
-      {/* Note: 'public/song.mp3' file ko apne public folder mein rakhein */}
-      {/* <audio ref={audioRef} src="public/Main Kabhi Bhoolunga Na Tujhe Saudebaazi ft.Aakrosh [Lofi + Slowed + Reverb ] @latenightlofis 🖤.mp3" loop /> */}
-
-      {/* Floating Music Control Button */}
-      {/* <button className="music-toggle-btn" onClick={toggleAudio}>
-        {isPlaying ? '🎵 Pause Music 🔊' : '🎶 Play Song 🎧'}
-      </button> */}
-
       {/* Background Falling Hearts & Roses Animation */}
       <div className="falling-bg-container">
         <div className="falling-element" style={{ left: '10%', animationDuration: '7s', animationDelay: '0s' }}>❤️</div>
@@ -92,9 +82,9 @@ function App() {
         {/* Heading */}
         <h1 className="title">My Best Friend 💖</h1>
 
-        {/* Centered Image Wrapper */}
-        <div className="img-wrapper">
-          <img src="public/3329011-removebg-preview.png" alt="Best Friend" className="friend-photo" />
+        {/* Centered Image Wrapper with Floating Animation Class */}
+        <div className="img-wrapper animated-teddy">
+          <img src="/3329011-removebg-preview.png" alt="Best Friend" className="friend-photo" />
         </div>
 
         {/* Subtitle Text */}
