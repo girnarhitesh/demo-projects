@@ -45,6 +45,7 @@ const Firstpage = () => {
                     <div className="img-wrapper">
                         <img src="public/I Love You Bunny GIF by rabbittobi.gif" alt="Best Friend" className="friend-photo" />
                     </div>
+                
 
                     {/* 4 Balloons Grid */}
                     <div className="balloons-grid">
