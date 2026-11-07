@@ -45,7 +45,7 @@ function MainApp() {
   return (
     <>
       {/* Permanent Global Audio Element */}
-      {/* <audio ref={audioRef} src="public/Main Kabhi Bhoolunga Na Tujhe Saudebaazi ft.Aakrosh [Lofi + Slowed + Reverb ] @latenightlofis 🖤.mp3" loop /> */}
+      <audio ref={audioRef} src="public/Main Kabhi Bhoolunga Na Tujhe Saudebaazi ft.Aakrosh [Lofi + Slowed + Reverb ] @latenightlofis 🖤.mp3" loop />
 
       {/* Back to Home Button (Ye tabhi dikhega jab aap main home '/' page par nahi hoge) */}
       {location.pathname !== '/' && (
